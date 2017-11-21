@@ -24,12 +24,12 @@ const sentence = 'JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as 
 const three = 'To infinity and beyond'
 
 // Replace a string with a wordBefore to a wordAfter
-const replaceString = (str, wordBefore, wordAfter ) => {
+function replaceString(str, wordBefore, wordAfter ) {
   return str.replace(new RegExp(wordBefore, 'gi'), wordAfter)
 }
 
 // Restrict a string to n characters
-const firstNCharacters = (str, n) => {
+function firstNCharacters(str, n) {
   return str.substring(0, n)
 }
 

@@ -1,4 +1,4 @@
-const github = require('../src/api/github')
+const github = require('./api/github')
 
 // github.reposBy('facebook')
 //   .then(res => {
@@ -10,7 +10,7 @@ const github = require('../src/api/github')
 //   })
 
 // Retrieves a repo from a particular owner
-const findReposByUser = owner => {
+function findReposByUser(owner) {
   github.reposBy(owner)
   .then(res => {
     const repos = res.data
@@ -25,7 +25,7 @@ const findReposByUser = owner => {
 }
 
 // Retrieves a repo's general info
-const getRepoInfo = repo => {
+function getRepoInfo(repo) {
   github.getRepoData(repo, 'REPO_INFO')
   .then(res => {
     console.log(res.data)
@@ -36,7 +36,7 @@ const getRepoInfo = repo => {
 }
 
 // Retrieves a repo's readme file
-const getRepoReadme = repo => {
+function getRepoReadme(repo) {
   github.getRepoData(repo, 'README')
   .then(res => {
     console.log( decodeBase64(res.data.content) )
@@ -47,12 +47,12 @@ const getRepoReadme = repo => {
 }
 
 // Converts a string from Base64 to Ascii
-const decodeBase64 = data => {
+function decodeBase64(data) {
   return new Buffer(data, 'base64').toString('ascii')
 }
 
 // Retrieves a repo's issue list
-const getRepoIssues = repo => {
+function getRepoIssues(repo) {
   github.getRepoData(repo, 'ISSUES')
   .then(res => {
     const issues = res.data

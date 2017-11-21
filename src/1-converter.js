@@ -28,17 +28,17 @@ Challenges:
 */
 
 // Convert Fahrenheit to Celsius: (°F − 32) x 5/9 = °C
-const convertFahrenheitToCelsius = fahrenheit => {
+function convertFahrenheitToCelsius(fahrenheit) {
   return (fahrenheit - 32) * 5/9;
 }
 
 // Format celsius to whole number then add °C on the end
-const formatCelsius = celsius => {
+function formatCelsius(celsius) {
   return `${Math.round(celsius)}°C`
 }
 
 // Take an array of temperatures and return the highest one
-const hottestTemperature = temperatures => {
+function hottestTemperature(temperatures) {
   return temperatures.sort( (a,b) => {return b-a} )[0]
 }
 
