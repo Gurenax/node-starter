@@ -19,6 +19,9 @@ const findReposByUser = owner => {
       console.log(`${repo.name}`)
     })
   })
+  .catch( reason => {
+    console.log(`Request rejected: (${reason})`)
+  })
 }
 
 // Retrieves a repo's general info
@@ -28,7 +31,7 @@ const getRepoInfo = repo => {
     console.log(res.data)
   })
   .catch( reason => {
-    console.log(`Handle rejected promise (${reason}) here.`)
+    console.log(`Request rejected: (${reason})`)
   })
 }
 
@@ -39,7 +42,7 @@ const getRepoReadme = repo => {
     console.log( decodeBase64(res.data.content) )
   })
   .catch( reason => {
-    console.log(`Handle rejected promise (${reason}) here.`)
+    console.log(`Request rejected: (${reason})`)
   })
 }
 
@@ -59,7 +62,7 @@ const getRepoIssues = repo => {
     )
   })
   .catch( reason => {
-    console.log(`Handle rejected promise (${reason}) here.`)
+    console.log(`Request rejected: (${reason})`)
   })
 }
 
