@@ -32,19 +32,29 @@ Challenges:
 */
 
 console.log( '-----' )
-// multiple - multiplies number
+// multiple - multiplies array of numbers
 const multiple = numbers => {
-  return eval(numbers.join('*'))
+  return numbers.reduce( (product, value) => {
+    return product * value
+  })
 }
 
 console.log(multiple([12, 5])) // => 60
 console.log(multiple([5, 7, 1])) // => 35
 
+
 // multipleNumbersString - multiplies a number string
 const multipleNumbersString = numberString => {
-  return eval(numberString)
+  const numbers = numberString.split('*').map(string => parseFloat(string))
+  return multiple(numbers)
 }
+
 console.log( '-----' )
 console.log(multipleNumbersString('12 * 5')) // => 60
 console.log(multipleNumbersString('5 * 7 * 1')) // => 35
 console.log(multipleNumbersString('1 * 2 * 3 * 4 * 5')) // => 15
+
+// Another option to add/multiply/etc a number string
+const evaluateAnyOperationNumberString = numberString => {
+  return eval(numberString)
+}
