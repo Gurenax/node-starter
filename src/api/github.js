@@ -8,11 +8,11 @@ const github = axios.create({
   baseURL: 'https://api.github.com'
 })
 
-const reposBy = username => {
+function reposBy(username) {
   return github.get(`/users/${username}/repos?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`)
 }
 
-const getRepoData = (repo, type='REPO_INFO') => {
+function getRepoData(repo, type='REPO_INFO') {
   let queryUrl = ''
   switch(type) {
     case 'REPO_INFO':
