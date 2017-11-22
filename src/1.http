@@ -1,0 +1,19 @@
+GET https://news.ycombinator.com
+
+###
+
+GET https://en.wikipedia.org/wiki/Sea_mink
+
+
+### 404
+GET https://en.wikipedia.org/wiki/Kfslkdjflksd
+
+
+### Post Code API - json
+http://v0.postcodeapi.com.au/suburbs/3000.json
+
+### Post Code API - html
+http://v0.postcodeapi.com.au/suburbs/3000
+
+### Image
+https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/The_Canadian_field-naturalist_%281988%29_%2820332897078%29.jpg/440px-The_Canadian_field-naturalist_%281988%29_%2820332897078%29.jpg
